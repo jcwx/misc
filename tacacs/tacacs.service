@@ -1,0 +1,20 @@
+[Unit]
+Description=tacacs
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c \
+   'if { ( /usr/bin/docker ps -a | grep acs ) } ; then \
+         ( /usr/bin/docker start acs ) ; else \
+           /usr/bin/docker run -p 49:49 \
+            --name acs acs ; \
+    fi'
+ExecStop=/usr/bin/docker stop acs
+RemainAfterExit=yes
+RestartSec=20m
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

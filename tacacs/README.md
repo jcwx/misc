@@ -13,7 +13,9 @@ The container, even with the additional configuration requirements, is still fai
 Something I added to this container is a script to start/stop the service with systemctl.  It uses the docker commands that would be utilized if one were to start/stop the container manually.  When using systemctl, you only need to know the name of the service to start/stop an existing service, or start a new instance if one doesn't exist.
 
 
-Update 5/21/18: I'm going to have to set up one of two things: a separate LDAP container or add a LDAP service to the TACACS+ container.  Not sure which way to go with this at this point.  I'm not a docker purist where I strictly believe in the 'one process, one container' concept.  If it's possible to set up a container where a few services can coexist without complications, then I'll consider it.  
+**Update 5/21/18: 
+
+I'm going to have to set up one of two things: a separate LDAP container or add a LDAP service to the TACACS+ container.  Not sure which way to go with this at this point.  I'm not a docker purist where I strictly believe in the 'one process, one container' concept.  If it's possible to set up a container where a few services can coexist without complications, then I'll consider it.  
 
 However, a separate LDAP container might not be such a bad thing either.  
 
